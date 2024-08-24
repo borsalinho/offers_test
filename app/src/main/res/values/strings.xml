@@ -5,4 +5,6 @@
     <string name="title_responce">Отклики</string>
     <string name="title_messages">Сообщения</string>
     <string name="title_profile">Профиль</string>
+
+    <string name="title_entry">Вход в личный кабинет</string>
 </resources>

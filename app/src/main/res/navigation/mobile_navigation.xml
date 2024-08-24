@@ -3,7 +3,19 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_responce">
+    app:startDestination="@+id/navigation_entry">
+
+    <fragment
+        android:id="@+id/navigation_entry"
+        android:name="com.tests.offerstest.ui.entry.EntryFragment"
+        android:label="@string/title_entry"
+        tools:layout="@layout/fragment_entry" />
+
+    <fragment
+        android:id="@+id/navigation_favorites"
+        android:name="com.tests.offerstest.ui.favorites.FavoritesFragment"
+        android:label="@string/title_favorites"
+        tools:layout="@layout/fragment_plug" />
 
     <fragment
         android:id="@+id/navigation_responce"
@@ -17,11 +29,7 @@
         android:label="@string/title_search"
         tools:layout="@layout/fragment_search" />
 
-    <fragment
-        android:id="@+id/navigation_favorites"
-        android:name="com.tests.offerstest.ui.favorites.FavoritesFragment"
-        android:label="@string/title_favorites"
-        tools:layout="@layout/fragment_plug" />
+
     <fragment
         android:id="@+id/navigation_messages"
         android:name="com.tests.offerstest.ui.messages.MessagesFragment"

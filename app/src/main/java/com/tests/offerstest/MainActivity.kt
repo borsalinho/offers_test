@@ -28,10 +28,20 @@ class MainActivity : AppCompatActivity() {
                 R.id.navigation_search,
                 R.id.navigation_favorites,
                 R.id.navigation_messages,
-                R.id.navigation_profile
+                R.id.navigation_profile,
+                R.id.navigation_entry
             )
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+
+
+        navController.addOnDestinationChangedListener { _, destination, _ ->
+            if (destination.id == R.id.navigation_entry) {
+                navView.menu.setGroupEnabled(0, false)
+            } else {
+                navView.menu.setGroupEnabled(0, true)
+            }
+        }
     }
 }
