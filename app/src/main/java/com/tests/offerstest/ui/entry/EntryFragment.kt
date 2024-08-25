@@ -6,7 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.commit
 import androidx.lifecycle.ViewModelProvider
+import com.tests.featureemailverification.ui.EmailVerificationFragment
+import com.tests.offerstest.R
 import com.tests.offerstest.databinding.FragmentEntryBinding
 
 class EntryFragment : Fragment() {
@@ -19,17 +22,23 @@ class EntryFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val favoritesViewModel =
+        val entryViewModel =
             ViewModelProvider(this).get(EntryViewModel::class.java)
 
         _binding = FragmentEntryBinding.inflate(inflater, container, false)
-        val root: View = binding.root
+
 
         val textView: TextView = binding.textEntry
-        favoritesViewModel.text.observe(viewLifecycleOwner) {
+        entryViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
-        return root
+
+        childFragmentManager.commit {
+            replace(R.id.fragmentEmailVerification, EmailVerificationFragment())
+        }
+
+
+        return binding.root
     }
 
     override fun onDestroyView() {

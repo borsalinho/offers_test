@@ -17,3 +17,4 @@ rootProject.name = "OffersTest"
 include(":app")
 include(":data")
 include(":domain")
+include(":feature-email-verification")

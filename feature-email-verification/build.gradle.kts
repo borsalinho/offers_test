@@ -1,21 +1,18 @@
 plugins {
-    id("com.android.application")
+    id("com.android.library")
     id("org.jetbrains.kotlin.android")
     id("kotlin-kapt")
 }
 
 android {
-    namespace = "com.tests.offerstest"
+    namespace = "com.tests.feature_email_verification"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.tests.offerstest"
-        minSdk = 28
-        targetSdk = 33
-        versionCode = 1
-        versionName = "1.0"
+        minSdk = 24
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles("consumer-rules.pro")
     }
 
     buildTypes {
@@ -41,14 +38,10 @@ android {
 
 dependencies {
 
-    implementation(project(":feature-email-verification"))
-
     //Dagger2
     implementation("com.google.dagger:dagger:2.45")
     implementation("androidx.legacy:legacy-support-v4:1.0.0")
-
     kapt("com.google.dagger:dagger-compiler:2.45")
-
 
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.7.0")
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0")
