@@ -1,6 +1,7 @@
 package com.tests.offerstest.app
 
 import android.app.Application
+import com.tests.featureemailverification.di.EmailVerificationModule
 import com.tests.offerstest.di.AppComponent
 import com.tests.offerstest.di.AppModule
 import com.tests.offerstest.di.DaggerAppComponent
@@ -16,6 +17,7 @@ class MyApp : Application() {
         appComponent = DaggerAppComponent
             .builder()
             .appModule(AppModule(this))
+            .emailVerificationModule(EmailVerificationModule())
             .build()
     }
 }

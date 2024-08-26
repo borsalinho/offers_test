@@ -1,5 +1,6 @@
 package com.tests.featureemailverification.di
 
+import com.tests.featureemailverification.emailpattern.EmailPattern
 import dagger.Module
 import dagger.Provides
 
@@ -7,5 +8,7 @@ import dagger.Provides
 class EmailVerificationModule {
 
     @Provides
-    fun provideEmailPattern(): String = ".*@mail\\.ru"
+    fun provideEmailPattern(): EmailPattern{
+        return EmailPattern()
+    }
 }
