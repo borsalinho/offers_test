@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/SearchWorkes"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/TitleSearchWorkes"
+        android:text="Поиск сотрудников" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/TextSearchWorkes"
+        android:text="Размещение и доступ к базе данных" />
+
+    <Button
+        android:id="@+id/buttonVerify"
+        style="@style/ButtonSearchWorkes"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:backgroundTint="@color/green"
+        android:paddingHorizontal="40dp"
+        android:paddingVertical="11dp"
+        android:text="Я ищу сотрудников" />
+
+</LinearLayout>

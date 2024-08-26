@@ -1,14 +1,13 @@
 package com.tests.offerstest.ui.entry
 
-import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.commit
 import androidx.lifecycle.ViewModelProvider
+import com.tests.feature_find_worker.ui.SearchWorkerFragment
 import com.tests.featureemailverification.emailpattern.EmailPattern
 import com.tests.featureemailverification.ui.EmailVerificationFragment
 import com.tests.offerstest.R
@@ -40,17 +39,13 @@ class EntryFragment : Fragment() {
         _binding = FragmentEntryBinding.inflate(inflater, container, false)
 
 
-        val textView: TextView = binding.textEntry
-        entryViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
+        childFragmentManager.commit {
+            replace(R.id.fragmentEmailVerification, EmailVerificationFragment(emailPattern))
         }
 
         childFragmentManager.commit {
-            replace(R.id.fragmentEmailVerification, EmailVerificationFragment())
+            replace(R.id.fragmentSearchForker, SearchWorkerFragment())
         }
-
-        System.out.println(emailPattern.toString())
-
 
         return binding.root
     }
@@ -59,4 +54,5 @@ class EntryFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
+
 }

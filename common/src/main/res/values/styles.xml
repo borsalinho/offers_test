@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="EmailVerification">
+        <item name="android:background">@drawable/rounded_grey1_8</item>
+        <item name="android:paddingEnd">16dp</item>
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:paddingTop">24dp</item>
+        <item name="android:paddingBottom">24dp</item>
+        <item name="android:radius">16dp</item>
+    </style>
+
+    <style name="TitleEmailVerification">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textAppearance">@style/title_3</item>
+        <item name="android:layout_marginBottom">16dp</item>
+
+    </style>
+
+    <style name="TextEditEmailVerification">
+        <item name="android:background">@drawable/rounded_grey2_8</item>
+        <item name="android:layout_marginBottom">16dp</item>
+        <item name="android:padding">8dp</item>
+        <item name="android:textColor">@color/grey5</item>
+        <item name="android:textAppearance">@style/title_4</item>
+    </style>
+
+    <style name="ButtonVerifyEmailVerification">
+        <item name="android:textColor">@color/grey4</item>
+        <item name="android:textAppearance">@style/title_4</item>
+        <item name="android:paddingEnd">40dp</item>
+        <item name="android:paddingStart">40dp</item>
+        <item name="android:paddingTop">11dp</item>
+        <item name="android:paddingBottom">11dp</item>
+
+    </style>
+
+    <style name="ButtonWithPassEmailVerification">
+        <item name="android:textColor">@color/blue</item>a
+        <item name="android:textAppearance">@style/title_4</item>
+    </style>
+
+
+
+    <style name="SearchWorkes">
+        <item name="android:background">@drawable/rounded_grey1_8</item>
+        <item name="android:paddingEnd">16dp</item>
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:paddingTop">24dp</item>
+        <item name="android:paddingBottom">24dp</item>
+        <item name="android:radius">16dp</item>
+    </style>
+
+    <style name="TitleSearchWorkes">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textAppearance">@style/title_3</item>
+        <item name="android:layout_marginBottom">16dp</item>
+
+    </style>
+
+    <style name="TextSearchWorkes">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textAppearance">@style/title_4</item>
+        <item name="android:layout_marginBottom">16dp</item>
+    </style>
+
+    <style name="ButtonSearchWorkes">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textAppearance">@style/title_4</item>
+        <item name="android:paddingTop">7dp</item>
+        <item name="android:paddingBottom">7dp</item>
+    </style>
+
+</resources>

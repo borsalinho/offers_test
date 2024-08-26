@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="enabledButtonColor">@color/blue</color>
+    <color name="enabledButtonTextColor">@color/white</color>
+    <color name="disabledButtonColor">@color/darkBlue</color>
+    <color name="disabledButtonTextColor">@color/grey4</color>
+</resources>

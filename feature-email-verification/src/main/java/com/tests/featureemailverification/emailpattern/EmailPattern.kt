@@ -1,4 +1,5 @@
 package com.tests.featureemailverification.emailpattern
 
-class EmailPattern {
-}
+data class EmailPattern (
+    val value: String = ".*@mail\\.ru"
+)
