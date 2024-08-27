@@ -7,15 +7,18 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.commit
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import com.tests.feature_find_worker.ui.SearchWorkerFragment
 import com.tests.featureemailverification.emailpattern.EmailPattern
+import com.tests.featureemailverification.emailverificationlistener.EmailVerificationListener
 import com.tests.featureemailverification.ui.EmailVerificationFragment
 import com.tests.offerstest.R
 import com.tests.offerstest.app.MyApp
 import com.tests.offerstest.databinding.FragmentEntryBinding
+import com.tests.offerstest.ui.verification.VerificationFragment
 import javax.inject.Inject
 
-class EntryFragment : Fragment() {
+class EntryFragment : Fragment(), EmailVerificationListener {
 
     private var _binding: FragmentEntryBinding? = null
     private val binding get() = _binding!!
@@ -40,7 +43,9 @@ class EntryFragment : Fragment() {
 
 
         childFragmentManager.commit {
-            replace(R.id.fragmentEmailVerification, EmailVerificationFragment(emailPattern))
+            val emailVerificationFragment = EmailVerificationFragment(emailPattern)
+            emailVerificationFragment.setEmailVerificationListener(this@EntryFragment)
+            replace(R.id.fragmentEmailVerification, emailVerificationFragment)
         }
 
         childFragmentManager.commit {
@@ -48,6 +53,16 @@ class EntryFragment : Fragment() {
         }
 
         return binding.root
+    }
+
+    override fun onEmailVerificated(isVerificated: Boolean) {
+        if(isVerificated){
+            transition()
+        }
+    }
+
+    private fun transition(){
+        findNavController().navigate(R.id.action_entryFragment_to_verificationFragment)
     }
 
     override fun onDestroyView() {

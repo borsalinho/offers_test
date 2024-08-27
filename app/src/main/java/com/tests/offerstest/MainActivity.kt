@@ -43,5 +43,11 @@ class MainActivity : AppCompatActivity() {
                 navView.menu.setGroupEnabled(0, true)
             }
         }
+
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        val navController = findNavController(R.id.nav_host_fragment_activity_main)
+        return navController.navigateUp() || super.onSupportNavigateUp()
     }
 }

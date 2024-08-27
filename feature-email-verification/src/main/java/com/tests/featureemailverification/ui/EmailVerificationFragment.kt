@@ -13,8 +13,12 @@ import androidx.fragment.app.Fragment
 import com.tests.feature_email_verification.R
 import com.tests.feature_email_verification.databinding.FragmentEmailVerificationBinding
 import com.tests.featureemailverification.emailpattern.EmailPattern
+import com.tests.featureemailverification.emailverificationlistener.EmailVerificationListener
 
-class EmailVerificationFragment(private val pattern: EmailPattern) : Fragment() {
+class EmailVerificationFragment(
+    private val pattern: EmailPattern
+) : Fragment() {
+    private var emailVerificationListener : EmailVerificationListener? = null
 
     private var _binding: FragmentEmailVerificationBinding? = null
     private val binding get() = _binding!!
@@ -34,12 +38,18 @@ class EmailVerificationFragment(private val pattern: EmailPattern) : Fragment() 
         return binding.root
     }
 
+    fun setEmailVerificationListener(emailListener : EmailVerificationListener){
+        emailVerificationListener = emailListener
+    }
+
     private fun validTextListener() {
         binding.buttonVerify.setOnClickListener {
             val email = binding.editTextEmail.text.toString()
             if (email.matches(Regex(pattern.value))) {
+                emailVerificationListener?.onEmailVerificated(true)
             } else {
                 showInvalidEmailError()
+                emailVerificationListener?.onEmailVerificated(false)
             }
         }
     }
@@ -48,7 +58,6 @@ class EmailVerificationFragment(private val pattern: EmailPattern) : Fragment() 
         binding.editTextEmail.setBackgroundResource(R.drawable.bg_red_border)
         binding.errorTextView.apply {
             visibility = View.VISIBLE
-            text = "Вы ввели неверный e-mail"
         }
     }
 
