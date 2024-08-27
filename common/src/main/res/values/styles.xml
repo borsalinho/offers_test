@@ -40,7 +40,7 @@
         <item name="android:textAppearance">@style/title_4</item>
     </style>
 
-
+<!--&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
 
     <style name="SearchWorkes">
         <item name="android:background">@drawable/rounded_grey1_8</item>
@@ -70,5 +70,46 @@
         <item name="android:paddingTop">7dp</item>
         <item name="android:paddingBottom">7dp</item>
     </style>
+
+    <!--&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
+
+    <style name="TitleCodeVerification">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textAppearance">@style/title_2</item>
+        <item name="android:layout_marginBottom">16dp</item>
+    </style>
+
+    <style name="TextCodeVerification">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textAppearance">@style/title_3</item>
+        <item name="android:layout_marginBottom">16dp</item>
+    </style>
+
+    <style name="TextEditCodeVerification">
+        <item name="android:background">@drawable/rounded_grey2_8</item>
+        <item name="android:layout_marginEnd">8dp</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:textColor">@color/grey5</item>
+        <item name="android:textAppearance">@style/title_4</item>
+        <item name="android:textColorHint">@color/grey3</item>
+    </style>
+
+    <style name="ButtonCodeVerification">
+        <item name="android:textColor">@color/grey4</item>
+        <item name="android:textAppearance">@style/title_2</item>
+        <item name="android:paddingEnd">40dp</item>
+        <item name="android:paddingStart">40dp</item>
+        <item name="android:paddingTop">11dp</item>
+        <item name="android:paddingBottom">11dp</item>
+    </style>
+
+
+    <!--&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
+
+
+    <style name="marginBottom_16">
+        <item name="android:titleMarginBottom">16dp</item>
+    </style>
+
 
 </resources>

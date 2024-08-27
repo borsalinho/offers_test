@@ -108,13 +108,13 @@ class EmailVerificationFragment(
 
         if (isTextNotEmpty) {
             binding.buttonVerify.apply {
-                setBackgroundColor(requireContext().getColor(R.color.enabledButtonColor))
-                setTextColor(requireContext().getColor(R.color.enabledButtonTextColor))
+                setBackgroundColor(requireContext().getColor(com.tests.common.R.color.enabledButtonColor))
+                setTextColor(requireContext().getColor(com.tests.common.R.color.enabledButtonTextColor))
             }
         } else {
             binding.buttonVerify.apply {
-                setBackgroundColor(requireContext().getColor(R.color.disabledButtonColor))
-                setTextColor(requireContext().getColor(R.color.disabledButtonTextColor))
+                setBackgroundColor(requireContext().getColor(com.tests.common.R.color.disabledButtonColor))
+                setTextColor(requireContext().getColor(com.tests.common.R.color.disabledButtonTextColor))
             }
         }
     }
@@ -122,6 +122,10 @@ class EmailVerificationFragment(
     private fun setIconsDefSettings() {
         binding.editTextEmail.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_responce_black_24dp, 0, 0, 0)
         updateButtonState()
+    }
+
+    fun getEmail() : String{
+        return binding.editTextEmail.text.toString()
     }
 
     override fun onDestroyView() {

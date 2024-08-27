@@ -18,4 +18,11 @@
     <color name="green">#4CB24E</color>
     <color name="darkGreen">#015905</color>
     <color name="red">#FF0000</color>
+
+
+    <color name="enabledButtonColor">@color/blue</color>
+    <color name="enabledButtonTextColor">@color/white</color>
+    <color name="disabledButtonColor">@color/darkBlue</color>
+    <color name="disabledButtonTextColor">@color/grey4</color>
+
 </resources>

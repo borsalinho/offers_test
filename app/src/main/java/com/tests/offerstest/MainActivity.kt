@@ -37,11 +37,17 @@ class MainActivity : AppCompatActivity() {
 
 
         navController.addOnDestinationChangedListener { _, destination, _ ->
-            if (destination.id == R.id.navigation_entry) {
+            if (
+                (destination.id == R.id.navigation_entry) ||
+                (destination.id == R.id.navigation_verification)
+                ) {
                 navView.menu.setGroupEnabled(0, false)
+                supportActionBar?.show()
             } else {
                 navView.menu.setGroupEnabled(0, true)
+                supportActionBar?.hide()
             }
+
         }
 
     }

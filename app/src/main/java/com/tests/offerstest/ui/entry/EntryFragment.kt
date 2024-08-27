@@ -23,6 +23,8 @@ class EntryFragment : Fragment(), EmailVerificationListener {
     private var _binding: FragmentEntryBinding? = null
     private val binding get() = _binding!!
 
+    lateinit var emailVerificationFragment: EmailVerificationFragment
+
     @Inject
     lateinit var emailPattern : EmailPattern
 
@@ -40,10 +42,9 @@ class EntryFragment : Fragment(), EmailVerificationListener {
             ViewModelProvider(this).get(EntryViewModel::class.java)
 
         _binding = FragmentEntryBinding.inflate(inflater, container, false)
-
+        emailVerificationFragment = EmailVerificationFragment(emailPattern)
 
         childFragmentManager.commit {
-            val emailVerificationFragment = EmailVerificationFragment(emailPattern)
             emailVerificationFragment.setEmailVerificationListener(this@EntryFragment)
             replace(R.id.fragmentEmailVerification, emailVerificationFragment)
         }
@@ -62,7 +63,11 @@ class EntryFragment : Fragment(), EmailVerificationListener {
     }
 
     private fun transition(){
-        findNavController().navigate(R.id.action_entryFragment_to_verificationFragment)
+        val mail = emailVerificationFragment.getEmail()
+        val bundle = Bundle().apply {
+            putString("email_key", mail)
+        }
+        findNavController().navigate(R.id.action_entryFragment_to_verificationFragment, bundle)
     }
 
     override fun onDestroyView() {

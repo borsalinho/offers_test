@@ -8,7 +8,6 @@ import androidx.fragment.app.Fragment
 import com.tests.feature_find_worker.databinding.FragmentSearchWorkersBinding
 
 class SearchWorkerFragment: Fragment() {
-
     private var _binding : FragmentSearchWorkersBinding? = null
     private val binding get() = _binding!!
 
