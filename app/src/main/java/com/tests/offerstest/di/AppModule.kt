@@ -1,6 +1,8 @@
 package com.tests.offerstest.di
 
 import android.content.Context
+import com.tests.domain.usecases.GetOffersUseCase
+import com.tests.offerstest.ui.search.SearchViewModel
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
@@ -14,5 +16,15 @@ class AppModule(
     @Singleton
     fun provideContext() : Context {
         return context
+    }
+
+    @Provides
+    @Singleton
+    fun provideSearchViewModel(
+        getOffersUseCase: GetOffersUseCase
+    ) : SearchViewModel {
+        return SearchViewModel(
+            getOffersUseCase = getOffersUseCase
+        )
     }
 }

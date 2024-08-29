@@ -4,34 +4,36 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
+import com.tests.offerstest.app.MyApp
 import com.tests.offerstest.databinding.FragmentSearchBinding
+import javax.inject.Inject
 
 class SearchFragment : Fragment() {
 
     private var _binding: FragmentSearchBinding? = null
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
+
+    @Inject
+    lateinit var searchViewModel : SearchViewModel
+
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        (requireActivity().application as MyApp).appComponent.inject(this)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val searchViewModel =
-            ViewModelProvider(this).get(SearchViewModel::class.java)
 
         _binding = FragmentSearchBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textSearch
-        searchViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
-        }
+        searchViewModel.fetchOffers()
+
         return root
     }
 

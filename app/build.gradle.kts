@@ -41,15 +41,22 @@ android {
 
 dependencies {
 
+    implementation(project(":domain"))
+    implementation(project(":data"))
+
     implementation(project(":feature-email-verification"))
     implementation(project(":feature-find-worker"))
     implementation(project(":feature-code-validation"))
     implementation(project(":common"))
 
+    //retrofit
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    //GSON
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+
     //Dagger2
     implementation("com.google.dagger:dagger:2.45")
     implementation("androidx.legacy:legacy-support-v4:1.0.0")
-
     kapt("com.google.dagger:dagger-compiler:2.45")
 
 

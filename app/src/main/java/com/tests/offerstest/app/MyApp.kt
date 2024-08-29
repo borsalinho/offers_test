@@ -5,6 +5,8 @@ import com.tests.featureemailverification.di.EmailVerificationModule
 import com.tests.offerstest.di.AppComponent
 import com.tests.offerstest.di.AppModule
 import com.tests.offerstest.di.DaggerAppComponent
+import com.tests.offerstest.di.DataModule
+import com.tests.offerstest.di.DomainModule
 import dagger.Component
 import javax.inject.Singleton
 
@@ -17,6 +19,8 @@ class MyApp : Application() {
         appComponent = DaggerAppComponent
             .builder()
             .appModule(AppModule(this))
+            .dataModule(DataModule())
+            .domainModule(DomainModule())
             .emailVerificationModule(EmailVerificationModule())
             .build()
     }
