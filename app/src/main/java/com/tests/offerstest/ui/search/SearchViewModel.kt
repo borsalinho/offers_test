@@ -8,6 +8,8 @@ import com.tests.domain.usecases.GetOffersUseCase
 import com.tests.offerstest.mappers.toOffersViewData
 import com.tests.offerstest.models.OffersViewData
 import kotlinx.coroutines.launch
+import retrofit2.HttpException
+import java.io.IOException
 
 class SearchViewModel(
     private val getOffersUseCase: GetOffersUseCase
@@ -16,18 +18,21 @@ class SearchViewModel(
     private val _offers = MutableLiveData<OffersViewData>()
     private val offers: LiveData<OffersViewData> get() = _offers
 
+    private val _error = MutableLiveData<String?>()
+    val error: LiveData<String?> get() = _error
+
     fun fetchOffers() {
         viewModelScope.launch {
             try {
-                System.out.println("1")
                 val result = getOffersUseCase.execute().toOffersViewData()
-                System.out.println("2")
                 _offers.value = result
-                System.out.println("3")
                 System.out.println(offers.value.toString())
+            } catch (e: HttpException) {
+                _error.value = "Ошибка сети: ${e.message()}"
+            } catch (e: IOException) {
+                _error.value = "Ошибка ввода-вывода: ${e.message}"
             } catch (e: Exception) {
-                System.out.println("Failed to parse JSON data: ${e.message}")
-                System.out.println("НИХУЯ")
+                _error.value = "Не удалось загрузить данные: ${e.message}"
             }
         }
     }
