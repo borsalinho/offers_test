@@ -36,19 +36,25 @@ class MainActivity : AppCompatActivity() {
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
-//        navView.menu.setGroupEnabled(0, false)
+        navView.menu.setGroupEnabled(0, false)
 
 
         navController.addOnDestinationChangedListener { _, destination, _ ->
             if (
                 (destination.id == R.id.navigation_entry) ||
-                (destination.id == R.id.navigation_verification)
+                (destination.id == R.id.navigation_verification) ||
+                (destination.id == R.id.navigation_card_vacancy)
                 ) {
-                navView.menu.setGroupEnabled(0, false)
                 supportActionBar?.show()
             } else {
-                navView.menu.setGroupEnabled(0, true)
                 supportActionBar?.hide()
+            }
+
+            if (destination.id == R.id.navigation_card_vacancy)
+            {
+                navView.visibility = View.GONE
+            } else {
+                navView.visibility = View.VISIBLE
             }
         }
 

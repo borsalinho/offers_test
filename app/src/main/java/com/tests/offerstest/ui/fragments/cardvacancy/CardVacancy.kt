@@ -40,7 +40,6 @@ class CardVacancy: Fragment() {
             replace(R.id.fragmentCardVacancy, VacancyDetailFragment())
         }
 
-
         return binding.root
     }
 

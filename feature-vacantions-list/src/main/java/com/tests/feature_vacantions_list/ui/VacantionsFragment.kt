@@ -1,7 +1,7 @@
 package com.tests.feature_vacantions_list.ui
 
-import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,10 +11,9 @@ import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.s21.presentation.ui.adapters.ViewDataAdapter
+import com.tests.common.model.ViewData
 import com.tests.feature_vacantions_list.databinding.FragmentVacantionsBinding
 import com.tests.feature_vacantions_list.model.VacancyFeature
-import com.tests.common.model.ViewData
-import com.tests.feature_vacantions_list.R
 
 class VacantionsFragment(
     private val vacancyFeatures: List<VacancyFeature>,
@@ -51,7 +50,8 @@ class VacantionsFragment(
         }
 
         viewDataAdapter.setOnItemClickListener { vacancy ->
-            navigateToVacancyDetail(vacancy)
+            saveSelectedVacancyId(vacancy)
+            findNavController().navigate(navId)
         }
 
         vacantionsViewModel.vacancyFeatures.observe(viewLifecycleOwner, Observer { features ->
@@ -61,13 +61,12 @@ class VacantionsFragment(
         })
     }
 
-    private fun navigateToVacancyDetail(vacancy: ViewData) {
-        val bundle = Bundle().apply {
-            putString("id_key", (vacancy as VacancyFeature).id)
+    private fun saveSelectedVacancyId(vacancy: ViewData) {
+        (vacancy as? VacancyFeature)?.let {
+            Log.d("VacancyDetailFragment", "я ключ  ${it.id}")
+            vacantionsViewModel.setSelectedVacancyId(it.id)
         }
-        findNavController().navigate(navId, bundle)
     }
-
 
     override fun onDestroyView() {
         super.onDestroyView()
