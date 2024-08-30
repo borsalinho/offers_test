@@ -8,6 +8,8 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.commit
 import androidx.lifecycle.Observer
+import com.s21.presentation.ui.adapters.ViewDataAdapter
+import com.s21.presentation.ui.adapters.ViewDataAdapterFactory
 import com.tests.offerstest.app.MyApp
 import com.tests.offerstest.databinding.FragmentSearchBinding
 import com.tests.offerstest.mappers.toVacancyFeatureList
@@ -23,6 +25,8 @@ class SearchFragment : Fragment() {
     @Inject
     lateinit var searchViewModel : SearchViewModel
 
+    @Inject
+    lateinit var viewDataAdapter: ViewDataAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,7 +49,7 @@ class SearchFragment : Fragment() {
 
                 val vacancyFeatures = it.vacancies.toVacancyFeatureList()
 
-                val vacantionsFragment = VacantionsFragment(vacancyFeatures)
+                val vacantionsFragment = VacantionsFragment(vacancyFeatures, viewDataAdapter)
 
                 childFragmentManager.commit {
                     replace(R.id.fragmentVacantions, vacantionsFragment)

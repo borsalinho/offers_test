@@ -1,5 +1,7 @@
 package com.tests.feature_vacantions_list.model
 
+import com.tests.common.model.ViewData
+
 
 data class VacancyFeature(
     val id: String,
@@ -16,7 +18,7 @@ data class VacancyFeature(
     val description: String?,
     val responsibilities: String,
     val questions: List<String>
-)
+) : ViewData
 
 data class AddressFeature(
     val town: String,
