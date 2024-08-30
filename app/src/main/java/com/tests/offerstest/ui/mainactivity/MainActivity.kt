@@ -1,6 +1,7 @@
 package com.tests.offerstest.ui.mainactivity
 
 import android.os.Bundle
+import android.view.View
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
@@ -35,6 +36,7 @@ class MainActivity : AppCompatActivity() {
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+//        navView.menu.setGroupEnabled(0, false)
 
 
         navController.addOnDestinationChangedListener { _, destination, _ ->
@@ -48,7 +50,6 @@ class MainActivity : AppCompatActivity() {
                 navView.menu.setGroupEnabled(0, true)
                 supportActionBar?.hide()
             }
-
         }
 
     }

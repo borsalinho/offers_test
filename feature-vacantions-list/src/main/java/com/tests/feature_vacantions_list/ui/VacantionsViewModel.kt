@@ -10,8 +10,14 @@ class VacantionsViewModel : ViewModel() {
     private val _vacancyFeatures = MutableLiveData<List<VacancyFeature>>()
     val vacancyFeatures: LiveData<List<VacancyFeature>> get() = _vacancyFeatures
 
+    private val _selectedVacancyId = MutableLiveData<String>()
+    val selectedVacancyId: LiveData<String> get() = _selectedVacancyId
 
     fun setVacancyFeatures(features: List<VacancyFeature>) {
         _vacancyFeatures.value = features
+    }
+
+    fun selectVacancy(id: String) {
+        _selectedVacancyId.value = id
     }
 }

@@ -8,16 +8,16 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.commit
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import com.s21.presentation.ui.adapters.ViewDataAdapter
-import com.s21.presentation.ui.adapters.ViewDataAdapterFactory
 import com.tests.offerstest.app.MyApp
 import com.tests.offerstest.databinding.FragmentSearchBinding
 import com.tests.offerstest.mappers.toVacancyFeatureList
-import javax.inject.Inject
 import com.tests.feature_vacantions_list.ui.VacantionsFragment
 import com.tests.offerstest.R
+import javax.inject.Inject
 
-class SearchFragment : Fragment() {
+class SearchFragment : Fragment(){
 
     private var _binding: FragmentSearchBinding? = null
     private val binding get() = _binding!!
@@ -46,18 +46,20 @@ class SearchFragment : Fragment() {
 
         searchViewModel.offers.observe(viewLifecycleOwner, Observer { offersViewData ->
             offersViewData?.let {
-
                 val vacancyFeatures = it.vacancies.toVacancyFeatureList()
 
-                val vacantionsFragment = VacantionsFragment(vacancyFeatures, viewDataAdapter)
+                val vacantionsFragment = VacantionsFragment(
+                    vacancyFeatures,
+                    viewDataAdapter,
+                    R.id.action_vacantionsFragment_to_vacancyDetailFragment
+                )
+
 
                 childFragmentManager.commit {
                     replace(R.id.fragmentVacantions, vacantionsFragment)
                 }
             }
         })
-
-
 
         errorObserve()
 
@@ -71,6 +73,7 @@ class SearchFragment : Fragment() {
             }
         })
     }
+
 
     override fun onDestroyView() {
         super.onDestroyView()
