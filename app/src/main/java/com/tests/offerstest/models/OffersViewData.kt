@@ -1,9 +1,10 @@
 package com.tests.offerstest.models
 
 data class OffersViewData(
-    val offers : List<OfferViewData>,
+    val offers: List<OfferViewData>,
     val vacancies: List<VacancyViewData>
 )
+
 data class OfferViewData(
     val id: String?,
     val title: String,

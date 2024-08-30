@@ -1,9 +1,11 @@
 package com.tests.offerstest.di
 
+import com.tests.common.di.CommonModule
+import com.tests.feature_vacantions_list.di.VacantionsListModule
 import com.tests.featureemailverification.di.EmailVerificationModule
-import com.tests.offerstest.ui.entry.EntryFragment
-import com.tests.offerstest.ui.search.SearchFragment
-import com.tests.offerstest.ui.verification.VerificationFragment
+import com.tests.offerstest.ui.fragments.entry.EntryFragment
+import com.tests.offerstest.ui.fragments.search.SearchFragment
+import com.tests.offerstest.ui.fragments.verification.VerificationFragment
 import dagger.Component
 import javax.inject.Singleton
 
@@ -13,7 +15,9 @@ import javax.inject.Singleton
         AppModule::class,
         DataModule::class,
         DomainModule::class,
-        EmailVerificationModule::class
+        EmailVerificationModule::class,
+        CommonModule::class,
+        VacantionsListModule::class
     ]
 )
 interface AppComponent {

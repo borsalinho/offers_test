@@ -48,6 +48,10 @@ dependencies {
     implementation(project(":feature-find-worker"))
     implementation(project(":feature-code-validation"))
     implementation(project(":common"))
+    implementation(project(":feature-vacantions-list"))
+
+    //parselize
+    implementation("org.jetbrains.kotlin:kotlin-parcelize-runtime:1.5.31")
 
     //retrofit
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
@@ -58,6 +62,9 @@ dependencies {
     implementation("com.google.dagger:dagger:2.45")
     implementation("androidx.legacy:legacy-support-v4:1.0.0")
     kapt("com.google.dagger:dagger-compiler:2.45")
+
+    //AdapterDelegate
+    implementation("com.hannesdorfmann:adapterdelegates4-pagination:4.3.0")
 
 
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.7.0")

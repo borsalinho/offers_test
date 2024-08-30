@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/navigation_entry"
-        android:name="com.tests.offerstest.ui.entry.EntryFragment"
+        android:name="com.tests.offerstest.ui.fragments.entry.EntryFragment"
         android:label="@string/title_entry"
         tools:layout="@layout/fragment_entry">
 
@@ -19,7 +19,7 @@
     <fragment
         android:id="@+id/navigation_verification"
         android:label="@string/title_validation"
-        android:name="com.tests.offerstest.ui.verification.VerificationFragment"
+        android:name="com.tests.offerstest.ui.fragments.verification.VerificationFragment"
         tools:layout="@layout/fragment_verification" >
 
         <action
@@ -29,40 +29,46 @@
 
     </fragment>
 
+    <fragment
+        android:id="@+id/vacantionsFragment"
+        android:name="com.tests.feature_vacantions_list.ui.VacantionsFragment"
+        android:label="vacantionsFragment">
+    </fragment>
+
 
     <fragment
         android:id="@+id/navigation_code_verification"
-        android:name="com.tests.offerstest.ui.verification.VerificationFragment"
+        android:name="com.tests.offerstest.ui.fragments.verification.VerificationFragment"
         android:label="@string/title_entry"
         tools:layout="@layout/fragment_verification"/>
 
     <fragment
         android:id="@+id/navigation_favorites"
-        android:name="com.tests.offerstest.ui.favorites.FavoritesFragment"
+        android:name="com.tests.offerstest.ui.fragments.favorites.FavoritesFragment"
         android:label="@string/title_favorites"
         tools:layout="@layout/fragment_plug" />
 
     <fragment
         android:id="@+id/navigation_responce"
-        android:name="com.tests.offerstest.ui.responses.ResponceFragment"
+        android:name="com.tests.offerstest.ui.fragments.responses.ResponceFragment"
         android:label="@string/title_responce"
         tools:layout="@layout/fragment_responce" />
 
     <fragment
         android:id="@+id/navigation_search"
-        android:name="com.tests.offerstest.ui.search.SearchFragment"
+        android:name="com.tests.offerstest.ui.fragments.search.SearchFragment"
         android:label="@string/title_search"
         tools:layout="@layout/fragment_search" />
 
 
     <fragment
         android:id="@+id/navigation_messages"
-        android:name="com.tests.offerstest.ui.messages.MessagesFragment"
+        android:name="com.tests.offerstest.ui.fragments.messages.MessagesFragment"
         android:label="@string/title_messages"
         tools:layout="@layout/fragment_plug" />
     <fragment
         android:id="@+id/navigation_profile"
-        android:name="com.tests.offerstest.ui.profile.ProfileFragment"
+        android:name="com.tests.offerstest.ui.fragments.profile.ProfileFragment"
         android:label="@string/title_profile"
         tools:layout="@layout/fragment_plug" />
 </navigation>
