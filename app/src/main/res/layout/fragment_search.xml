@@ -25,12 +25,14 @@
     <FrameLayout
         android:id="@+id/fragmentVacantions"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="589dp"
         android:layout_marginTop="28dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_percent="0.5"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_search" />
+        app:layout_constraintTop_toBottomOf="@+id/text_search"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -9,7 +9,8 @@ import com.tests.common.model.ViewData
 import com.tests.feature_vacantions_list.databinding.ItemVacantionBinding
 import com.tests.feature_vacantions_list.model.VacancyFeature
 
-class VacationsAdapterDelegate :
+class VacationsAdapterDelegate(
+) :
     AbsListItemAdapterDelegate<VacancyFeature, ViewData, VacationsAdapterDelegate.OfferViewHolder>() {
 
     override fun isForViewType(item: ViewData, items: MutableList<ViewData>, position: Int) = item is VacancyFeature
@@ -27,8 +28,12 @@ class VacationsAdapterDelegate :
 
         @SuppressLint("SetTextI18n")
         fun bind(data: VacancyFeature) {
+            binding.watchNow.text = "Сейчас просматривают" + data.lookingNumber.toString()
             binding.title.text = data.title
+            binding.town.text = data.address.town
             binding.company.text = data.company
+            binding.experience.text = data.experience.previewText
+            binding.publishedDate.text = data.publishedDate
         }
     }
 }

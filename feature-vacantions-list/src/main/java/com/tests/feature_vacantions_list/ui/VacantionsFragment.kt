@@ -1,6 +1,5 @@
 package com.tests.feature_vacantions_list.ui
 
-import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -10,11 +9,8 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.s21.presentation.ui.adapters.ViewDataAdapter
-import com.tests.common.di.CommonModule
 import com.tests.feature_vacantions_list.databinding.FragmentVacantionsBinding
 import com.tests.feature_vacantions_list.model.VacancyFeature
-import javax.inject.Inject
-
 
 
 class VacantionsFragment(
@@ -26,7 +22,6 @@ class VacantionsFragment(
     private val binding get() = _binding!!
 
     private val vacantionsViewModel: VacantionsViewModel by viewModels()
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -47,6 +42,7 @@ class VacantionsFragment(
     }
 
     private fun setupRecyclerView() {
+
         binding.recyclerView.apply {
             layoutManager = LinearLayoutManager(requireContext())
             adapter = viewDataAdapter

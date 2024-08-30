@@ -33,6 +33,19 @@
         android:id="@+id/vacantionsFragment"
         android:name="com.tests.feature_vacantions_list.ui.VacantionsFragment"
         android:label="vacantionsFragment">
+        <action
+            android:id="@+id/action_vacantionsFragment_to_vacancyDetailFragment"
+            app:destination="@+id/navigation_search"
+            />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/vacancyDetailFragment"
+        android:name="com.tests.feature_vacantions_list.ui.VacancyDetailFragment"
+        android:label="Vacancy Detail Fragment"
+        tools:layout="@layout/fragment_vacancy_detail">
+
     </fragment>
 
 
