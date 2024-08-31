@@ -6,7 +6,7 @@
     app:startDestination="@+id/navigation_entry"
     >
 
-    <fragment.
+    <fragment
         android:id="@+id/navigation_entry"
         android:name="com.tests.offerstest.ui.fragments.entry.EntryFragment"
         android:label="@string/title_entry"
@@ -15,7 +15,7 @@
         <action
             android:id="@+id/action_entryFragment_to_verificationFragment"
             app:destination="@id/navigation_verification" />
-    </fragment.>
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_verification"
