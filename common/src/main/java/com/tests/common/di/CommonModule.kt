@@ -15,14 +15,19 @@ class CommonModule {
     @Qualifier
     @Retention(AnnotationRetention.RUNTIME)
     annotation class Vacantion
+
+    @Qualifier
+    @Retention(AnnotationRetention.RUNTIME)
+    annotation class Offers
     @Provides
     fun provideViewDataAdapter(
-
-        @Vacantion vacantion : AdapterDelegate<List<ViewData>>
+        @Vacantion vacantion : AdapterDelegate<List<ViewData>>,
+        @Offers offers : AdapterDelegate<List<ViewData>>
     ) : ViewDataAdapter {
         return ViewDataAdapterFactory.createAdapter(
             delegates = arrayOf(
-                vacantion
+                vacantion,
+                offers
             )
         )
     }

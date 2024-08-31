@@ -2,6 +2,7 @@ package com.tests.offerstest.app
 
 import android.app.Application
 import com.tests.common.di.CommonModule
+import com.tests.feature_offers_list.di.OffersListModule
 import com.tests.feature_vacantions_list.di.VacantionsListModule
 import com.tests.featureemailverification.di.EmailVerificationModule
 import com.tests.offerstest.di.AppComponent
@@ -25,6 +26,7 @@ class MyApp : Application() {
             .commonModule(CommonModule())
             .emailVerificationModule(EmailVerificationModule())
             .vacantionsListModule(VacantionsListModule())
+            .offersListModule(OffersListModule())
             .build()
     }
 }

@@ -22,6 +22,9 @@ class SearchViewModel(
     private val _error = MutableLiveData<String?>()
     val error: LiveData<String?> get() = _error
 
+    private val _isLoading = MutableLiveData<Boolean>()
+    val isLoading: LiveData<Boolean> get() = _isLoading
+
     fun fetchOffers() {
         viewModelScope.launch {
             try {
@@ -34,6 +37,8 @@ class SearchViewModel(
                 _error.value = "Ошибка ввода-вывода: ${e.message}"
             } catch (e: Exception) {
                 _error.value = "Не удалось загрузить данные: ${e.message}"
+            } finally {
+                _isLoading.value = false
             }
         }
     }

@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.commit
-import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.tests.feature_find_worker.ui.SearchWorkerFragment
 import com.tests.featureemailverification.emailpattern.EmailPattern

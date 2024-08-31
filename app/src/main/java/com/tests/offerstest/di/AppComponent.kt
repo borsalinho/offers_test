@@ -2,6 +2,7 @@ package com.tests.offerstest.di
 
 import com.tests.common.di.CommonModule
 import com.tests.feature_vacantions_list.di.VacantionsListModule
+import com.tests.feature_offers_list.di.OffersListModule
 import com.tests.featureemailverification.di.EmailVerificationModule
 import com.tests.offerstest.ui.fragments.cardvacancy.CardVacancy
 import com.tests.offerstest.ui.fragments.entry.EntryFragment
@@ -18,7 +19,8 @@ import javax.inject.Singleton
         DomainModule::class,
         EmailVerificationModule::class,
         CommonModule::class,
-        VacantionsListModule::class
+        VacantionsListModule::class,
+        OffersListModule::class
     ]
 )
 interface AppComponent {
