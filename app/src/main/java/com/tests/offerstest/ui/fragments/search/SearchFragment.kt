@@ -8,12 +8,11 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.commit
 import androidx.lifecycle.Observer
-import androidx.navigation.fragment.findNavController
 import com.s21.presentation.ui.adapters.ViewDataAdapter
 import com.tests.offerstest.app.MyApp
 import com.tests.offerstest.databinding.FragmentSearchBinding
 import com.tests.offerstest.mappers.toVacancyFeatureList
-import com.tests.feature_vacantions_list.ui.VacantionsFragment
+import com.tests.feature_vacantions_list.ui.vacantions.VacantionsFragment
 import com.tests.offerstest.R
 import javax.inject.Inject
 

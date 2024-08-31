@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/vacantionsFragment"
-        android:name="com.tests.feature_vacantions_list.ui.VacantionsFragment"
+        android:name="com.tests.feature_vacantions_list.ui.vacantions.VacantionsFragment"
         android:label="vacantionsFragment"
         tools:layout="@layout/fragment_vacantions"
         >
@@ -16,7 +16,7 @@
 
     <fragment
         android:id="@+id/vacancyDetailFragment"
-        android:name="com.tests.feature_vacantions_list.ui.VacancyDetailFragment"
+        android:name="com.tests.feature_vacantions_list.ui.vacantionsdetail.VacancyDetailFragment"
         android:label="Vacancy Detail Fragment"
         tools:layout="@layout/fragment_vacancy_detail">
 

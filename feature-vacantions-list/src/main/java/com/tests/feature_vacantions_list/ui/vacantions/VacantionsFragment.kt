@@ -1,4 +1,4 @@
-package com.tests.feature_vacantions_list.ui
+package com.tests.feature_vacantions_list.ui.vacantions
 
 import android.os.Bundle
 import android.util.Log
@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
@@ -24,7 +25,7 @@ class VacantionsFragment(
     private var _binding: FragmentVacantionsBinding? = null
     private val binding get() = _binding!!
 
-    private val vacantionsViewModel: VacantionsViewModel by viewModels()
+    private val vacantionsViewModel: VacantionsViewModel by activityViewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -63,7 +64,6 @@ class VacantionsFragment(
 
     private fun saveSelectedVacancyId(vacancy: ViewData) {
         (vacancy as? VacancyFeature)?.let {
-            Log.d("VacancyDetailFragment", "я ключ  ${it.id}")
             vacantionsViewModel.setSelectedVacancyId(it.id)
         }
     }

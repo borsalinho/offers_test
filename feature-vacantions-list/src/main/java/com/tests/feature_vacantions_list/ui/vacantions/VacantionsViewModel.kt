@@ -1,10 +1,12 @@
-package com.tests.feature_vacantions_list.ui
+package com.tests.feature_vacantions_list.ui.vacantions
 
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.tests.feature_vacantions_list.model.VacancyFeature
+import kotlinx.coroutines.launch
 
 class VacantionsViewModel : ViewModel() {
 
@@ -22,17 +24,14 @@ class VacantionsViewModel : ViewModel() {
     }
 
     fun setSelectedVacancyId(id: String) {
-        Log.d("VacancyDetailFragment", "сохраняю ключ вьюмодель  ${id}")
         _selectedVacancyId.value = id
-        Log.d("VacancyDetailFragment", "после осхранения  ${selectedVacancyId.value}")
     }
 
-    fun selectVacancy(vacancyId: String) {
-        Log.d("VacancyDetailFragment", "буду искать")
-        _vacancyFeatures.value?.let { features ->
-            Log.d("VacancyDetailFragment", "ищу")
-            _selectedVacancy.value = features.find { it.id == vacancyId }
-            Log.d("VacancyDetailFragment", "нашел ${selectedVacancy.value}")
+    fun selectVacancy() {
+        viewModelScope.launch {
+            _vacancyFeatures.value?.let { features ->
+                _selectedVacancy.value = features.find { it.id == selectedVacancyId.value }
+            }
         }
     }
 }

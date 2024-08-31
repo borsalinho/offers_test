@@ -1,4 +1,4 @@
-package com.tests.feature_vacantions_list.ui
+package com.tests.feature_vacantions_list.ui.vacantionsdetail
 
 import android.annotation.SuppressLint
 import android.os.Bundle
@@ -7,27 +7,19 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import com.tests.feature_vacantions_list.databinding.FragmentVacancyDetailBinding
 import com.tests.feature_vacantions_list.model.VacancyFeature
+import com.tests.feature_vacantions_list.ui.vacantions.VacantionsViewModel
 
 class VacancyDetailFragment : Fragment() {
 
-    private val vacantionsViewModel: VacantionsViewModel by viewModels()
+    private val vacantionsDetailViewModel: VacantionsDetailViewModel by viewModels()
+    private val vacantionsViewModel: VacantionsViewModel by activityViewModels()
     private var _binding: FragmentVacancyDetailBinding? = null
     private val binding get() = _binding!!
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        Log.d("VacancyDetailFragment", "onCreate")
-
-        vacantionsViewModel.selectedVacancyId.observe(this, Observer { vacancyId ->
-            if (vacancyId != null) {
-                vacantionsViewModel.selectVacancy(vacancyId)
-            }
-        })
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -39,22 +31,32 @@ class VacancyDetailFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        Log.d("VacancyDetailFragment", "onViewCreated")
+
+        vacantionsViewModel.selectVacancy()
+
+        selectedVacancyObserver()
+        vacancyFeatureObserver()
 
 
-        vacantionsViewModel.selectedVacancy.observe(viewLifecycleOwner, Observer { vacancy ->
-            if (vacancy == null) {
-                Log.d("VacancyDetailFragment", "Vacancy is null")
-            } else {
-                Log.d("VacancyDetailFragment", "Vacancy received: $vacancy")
-                updateUI(vacancy)
+    }
+
+    private fun selectedVacancyObserver(){
+        vacantionsViewModel.selectedVacancy.observe(viewLifecycleOwner, Observer { vacancyId ->
+            if (vacancyId != null) {
+                vacantionsDetailViewModel.setVacancyFeature(vacancyId)
+
             }
+        })
+    }
+
+    private fun vacancyFeatureObserver(){
+        vacantionsDetailViewModel.vacancyFeature.observe(viewLifecycleOwner, Observer { vacancy ->
+            updateUI(vacancy)
         })
     }
 
     @SuppressLint("SetTextI18n")
     private fun updateUI(vacancy: VacancyFeature) {
-        Log.d("VacancyDetailFragment", "Updating UI with vacancy: $vacancy")
         binding.title.text = vacancy.title
         binding.salary.text = vacancy.salary.toString()
         binding.experience.text = vacancy.experience.previewText

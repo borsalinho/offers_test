@@ -6,17 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.commit
-import androidx.navigation.fragment.findNavController
-import com.tests.feature_find_worker.ui.SearchWorkerFragment
-import com.tests.feature_vacantions_list.ui.VacancyDetailFragment
-import com.tests.featureemailverification.emailpattern.EmailPattern
-import com.tests.featureemailverification.emailverificationlistener.EmailVerificationListener
-import com.tests.featureemailverification.ui.EmailVerificationFragment
+import com.tests.feature_vacantions_list.ui.vacantionsdetail.VacancyDetailFragment
 import com.tests.offerstest.R
 import com.tests.offerstest.app.MyApp
 import com.tests.offerstest.databinding.FragmentCardVacancyBinding
-import com.tests.offerstest.databinding.FragmentEntryBinding
-import javax.inject.Inject
 
 class CardVacancy: Fragment() {
 
