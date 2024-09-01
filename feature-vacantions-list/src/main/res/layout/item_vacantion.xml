@@ -8,36 +8,44 @@
 
     <TextView
         android:id="@+id/watch_now"
+        style="@style/VacationWatchNow"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
     <TextView
         android:id="@+id/title"
+        style="@style/VacationTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
     <TextView
         android:id="@+id/town"
+        style="@style/VacationTown"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
     <TextView
         android:id="@+id/company"
+        style="@style/VacationCompany"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
     <TextView
         android:id="@+id/experience"
+        style="@style/VacationExperience"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
     <TextView
         android:id="@+id/publishedDate"
+        style="@style/VacationPublishedDate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
     <Button
         android:text="Откликнуться"
+        style="@style/VacationButton"
+        android:backgroundTint="@color/green"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 

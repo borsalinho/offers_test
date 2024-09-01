@@ -28,12 +28,12 @@ class VacationsAdapterDelegate(
 
         @SuppressLint("SetTextI18n")
         fun bind(data: VacancyFeature) {
-            binding.watchNow.text = "Сейчас просматривают" + data.lookingNumber.toString()
+            binding.watchNow.text = "Сейчас просматривают " + data.lookingNumber.toString() + " человек"
             binding.title.text = data.title
             binding.town.text = data.address.town
             binding.company.text = data.company
             binding.experience.text = data.experience.previewText
-            binding.publishedDate.text = data.publishedDate
+            binding.publishedDate.text = "Опубликовано " +  data.publishedDate
         }
     }
 }

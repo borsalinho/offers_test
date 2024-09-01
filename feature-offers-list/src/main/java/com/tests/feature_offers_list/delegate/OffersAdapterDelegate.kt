@@ -31,14 +31,11 @@ class OffersAdapterDelegate(
         fun bind(data: OfferFeature) {
 
             binding.title.text = data.title
-            binding.link.text = data.link
             if (data.button != null){
-                binding.button.text = data.button.toString()
-                binding.button.visibility = View.VISIBLE
+                binding.akaButton.visibility = View.VISIBLE
             } else {
-                binding.button.visibility = View.GONE
+                binding.akaButton.visibility = View.GONE
             }
-
         }
     }
 }
